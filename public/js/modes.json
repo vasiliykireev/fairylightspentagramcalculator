@@ -1,0 +1,255 @@
+{
+    "new-year": [
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "#dc3545",
+                "#0dcaf0",
+                "#20c997"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 111,
+            "colors": [
+                "#dc3545",
+                "#0dcaf0",
+                "#20c997"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 333,
+            "colors": [
+                "#dc3545",
+                "#dc3545",
+                "#dc3545",
+                "#0dcaf0",
+                "#0dcaf0",
+                "#0dcaf0",
+                "#20c997",
+                "#20c997",
+                "#20c997"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "#dc3545",
+                "transparent",
+                "transparent",
+                "#0dcaf0",
+                "transparent",
+                "transparent",
+                "#20c997",
+                "transparent",
+                "transparent"
+            ]
+        }
+    ],
+    "christmas": [
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "#FFE599",
+                "#D72631",
+                "#2A9D8F"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 111,
+            "colors": [
+                "#FFE599",
+                "#D72631",
+                "#2A9D8F"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 333,
+            "colors": [
+                "#FFE599",
+                "#FFE599",
+                "#FFE599",
+                "#D72631",
+                "#D72631",
+                "#D72631",
+                "#2A9D8F",
+                "#2A9D8F",
+                "#2A9D8F"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "#FFE599",
+                "transparent",
+                "transparent",
+                "#D72631",
+                "transparent",
+                "transparent",
+                "#2A9D8F",
+                "transparent",
+                "transparent"
+            ]
+        }
+    ],
+    "helloween": [
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "rgba(226, 62, 0, 1)",
+                "rgba(255, 107, 0, 1)",
+                "rgba(255, 183, 51, 1)"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 111,
+            "colors": [
+                "rgba(226, 62, 0, 1)",
+                "rgba(255, 107, 0, 1)",
+                "rgba(255, 183, 51, 1)"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 333,
+            "colors": [
+                "rgba(226, 62, 0, 1)",
+                "rgba(226, 62, 0, 1)",
+                "rgba(226, 62, 0, 1)",
+                "rgba(255, 107, 0, 1)",
+                "rgba(255, 107, 0, 1)",
+                "rgba(255, 107, 0, 1)",
+                "rgba(255, 183, 51, 1)",
+                "rgba(255, 183, 51, 1)",
+                "rgba(255, 183, 51, 1)",
+                "rgba(255, 107, 0, 1)",
+                "rgba(255, 107, 0, 1)",
+                "rgba(255, 107, 0, 1)"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "rgba(226, 62, 0, 1)",
+                "transparent",
+                "transparent",
+                "rgba(255, 107, 0, 1)",
+                "transparent",
+                "transparent",
+                "rgba(255, 183, 51, 1)",
+                "transparent",
+                "transparent"
+            ]
+        }
+    ],
+    "independence-day": [
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "#FF2400",
+                "#FFE599",
+                "#1E90FF"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 111,
+            "colors": [
+                "#FF2400",
+                "#FFE599",
+                "#1E90FF"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 333,
+            "colors": [
+                "#FF2400",
+                "#FF2400",
+                "#FF2400",
+                "#FFE599",
+                "#FFE599",
+                "#FFE599",
+                "#1E90FF",
+                "#1E90FF",
+                "#1E90FF"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "#FF2400",
+                "transparent",
+                "transparent",
+                "#FFE599",
+                "transparent",
+                "transparent",
+                "#1E90FF",
+                "transparent",
+                "transparent"
+            ]
+        }
+    ],
+    "neon": [
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "#C766FF",
+                "#3DF5E8",
+                "#FF3CAC"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 111,
+            "colors": [
+                "#C766FF",
+                "#3DF5E8",
+                "#FF3CAC"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 333,
+            "colors": [
+                "#C766FF",
+                "#C766FF",
+                "#C766FF",
+                "#3DF5E8",
+                "#3DF5E8",
+                "#3DF5E8",
+                "#FF3CAC",
+                "#FF3CAC",
+                "#FF3CAC"
+            ]
+        },
+        {
+            "mode": "blink",
+            "speed": 666,
+            "colors": [
+                "#C766FF",
+                "transparent",
+                "transparent",
+                "#3DF5E8",
+                "transparent",
+                "transparent",
+                "#FF3CAC",
+                "transparent",
+                "transparent"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+html {
+  overflow-y: scroll;
+}
+
+.screen,
+.screen-settings {
+    /* display: flex;
+    align-items: start;
+    justify-content: center; */
+    min-height: 100vh;
+}
+
+.screen-settings__direction_column {
+    flex-direction: column;
+}
+
+.screen-settings__direction_row {
+    flex-direction: row;
+}
+
+.screensaver {
+    margin-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    height: 96%;
+    /* max-height: 98vh; */
+}
+
+.settings {
+    display: block;
+}
+
+.settings__direction_row {
+    max-width: 100%;
+    min-width: 50%;
+}
+
+.settings__direction_column {
+    width: 100%;
+}
+
+.screensaver__direction_row {
+    width: 50%;
+}
+
+.screensaver__direction_column {
+    width: 100%;
+}
+
+.screensaver__clicker {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    height: 100%;
+    max-height: 100vh;
+    /* max-height: calc(100vh - 48px * 2 - 16px * 2 - 8px * 2 + 1px); */
+}
+
+.screen-control__nav-link.active {
+    display: none;
+}
+
+.settings__heading {
+    text-transform: uppercase;
+}
+
+.page404 {
+    max-height: 100vh; margin-top: 2%;
+}
+
+.page404__col {
+    min-height: 96vh;
+}
+
+.page404__screensaver {
+    height: 100%;
+}
+
+.page404__clicker {
+    height: 90%; max-height: 100vh;
+}

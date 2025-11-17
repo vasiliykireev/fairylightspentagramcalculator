@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fairy Lights Pentagram Calculator</title>
+    <meta name="description"
+        content="Want a shiny fairy lights pentagram on your wall but not sure how much length you need? Here's the Fairy Lights Pentagram Calculator that makes every day brighter!">
+    <meta name="author" content="Vasiliy Kvasov">
+    <link rel="stylesheet" href="./css/sketchy.css">
+    <link rel="stylesheet" href="./css/resize.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fairy Lights Pentagram Calculator" />
+    <meta property="og:description"
+        content="Want a shiny fairy lights pentagram on your wall but not sure how much length you need? Here's the Fairy Lights Pentagram Calculator that makes every day brighter!" />
+    <meta property="og:image"
+        content="https://fairylightspentagramcalculator.com/fairylightspentagramcalculator-og.jpg" />
+    <meta property="og:type" content="product" />
+    <meta property="og:url" content="https://fairylightspentagramcalculator.com" />
+</head>
+
+<body>
+    <div class="container-fluid" x-data="load">
+        <div class="screens tab-content" id="screens-tabs">
+            <div class="screens__tab tab-pane fade show active" id="screen-settings-tab"
+                aria-labelledby="screen-settings-pill">
+                <div class="row">
+                    <!-- Screen Settings -->
+                    <div class="screen screen-settings col d-flex align-items-start justify-content-center">
+                        <!-- Screensaver-->
+                        <div class="screen-settings__item screensaver d-flex align-items-start justify-content-center">
+                            <button class="screensaver__clicker btn btn-link position-sticky top-0" type="button"
+                                id="screen-settings-clicker" x-on:click="fairyLightsPentagram.changeEffect()"
+                                aria-label="Switch effect"></button>
+                        </div>
+                        <!-- Settings -->
+                        <div class="screen-settings__item settings">
+                            <div
+                                class="settings__container d-flex flex-column justify-content-center align-items-center h-100">
+                                <div class="settings__wrapper col-10 pb-5 pt-1 pt-sm-5">
+                                    <!-- Menu -->
+                                    <ul class="settings__nav nav nav-pills flex-column d-flex align-items-start"
+                                        role="tablist" aria-label="Settings tabs">
+                                        <li class="settings__nav-item nav-item" role="presentation">
+                                            <button class="settings__nav-link nav-link active" id="calculator-tab"
+                                                data-bs-toggle="tab" data-bs-target="#calculator-tab-pane" type="button"
+                                                role="tab" aria-controls="calculator-tab-pane" aria-selected="true">
+                                                <span x-html="icons[2]"></span>
+                                                Calculator
+                                            </button>
+                                        </li>
+                                        <li class="settings__nav-item nav-item" role="presentation">
+                                            <button class="settings__nav-link nav-link" id="modes-tab"
+                                                data-bs-toggle="tab" data-bs-target="#modes-tab-pane" type="button"
+                                                role="tab" aria-controls="modes-tab-pane" aria-selected="false">
+                                                <span x-html="icons[3]"></span>
+                                                Fairy Lights Modes
+                                            </button>
+                                        </li>
+                                        <li class="settings__nav-item nav-item" role="presentation">
+                                            <button class="settings__nav-link nav-link" id="about-tab"
+                                                data-bs-toggle="tab" data-bs-target="#about-tab-pane" type="button"
+                                                role="tab" aria-controls="about-tab-pane" aria-selected="false">
+                                                <span x-html="icons[4]"></span>
+                                                About
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <!-- Tabs -->
+                                    <div class="settings__tab-content tab-content">
+                                        <!-- Calculator -->
+                                        <div class="settings__tab-pane calculator tab-pane fade show active"
+                                            id="calculator-tab-pane" role="tabpanel" aria-labelledby="calculator-tab">
+                                            <h1 class="settings__heading h4 text-center mt-3 mb-3">
+                                                Fairy Lights Pentagram Calculator</h1>
+                                            <form class="calculator__card card p-3"
+                                                x-data="{pentagramDiameter: '', pentagramLength: '', ratio: 7.89687523508}">
+                                                <p class="calculator__caption text-center">Inches, feet, centimeters —
+                                                    whatever…</p>
+                                                <div class="calculator__diameter diameter mb-4">
+                                                    <label class="diameter__form-label form-label"
+                                                        for="pentagram-diameter">Pentagram
+                                                        diameter</label>
+                                                    <div class="diameter__input-group d-flex align-items-center">
+                                                        <input type="number" class="diameter__input form-control me-2"
+                                                            id="pentagram-diameter" step="0.1" placeholder="66.6"
+                                                            aria-label="Pentagram diameter"
+                                                            x-model.number="pentagramDiameter" />
+                                                        <button type="button" class="diameter__apply btn btn-secondary"
+                                                            x-on:click="if (pentagramDiameter > 0) {pentagramLength = Math.round(pentagramDiameter * ratio * 10) / 10}">
+                                                            Calculate
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator__length length mb-4">
+                                                    <label class="length__form-label form-label"
+                                                        for="pentagram-length">Fairy lights length</label>
+                                                    <div class="length__input-group d-flex align-items-center">
+                                                        <input type="number" class="length__input form-control me-2"
+                                                            id="pentagram-length" step="0.1" placeholder="525.9"
+                                                            x-model.number="pentagramLength"
+                                                            aria-label="Fairy lights length" />
+                                                        <button type="button" class="length__apply btn btn-secondary"
+                                                            x-on:click="if (pentagramLength > 0) {pentagramDiameter = Math.round(pentagramLength / ratio * 10) / 10}">
+                                                            Calculate
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Modes -->
+                                        <div class="settings__tab-pane modes tab-pane fade" id="modes-tab-pane"
+                                            role="tabpanel" aria-labelledby="modes-tab">
+                                            <h2 class="settings__heading h4 text-center mt-3 mb-3">
+                                                Fairy Lights Pentagram Modes</h2>
+                                            <form class="calculator__card card p-3">
+                                                <p class="text-center">Click the pentagram to switch effects!</p>
+                                                <div class="mode-buttons mb-4">
+                                                    <p class="mb-0">Select a mode:</p>
+                                                    <template x-for="(key, index) in Object.keys(fairyLightsModes)"
+                                                        :key="key">
+                                                        <span><input type="radio" class="btn-check"
+                                                                name="fairy-lights-pentagram-modes"
+                                                                x-bind:id="key.replace(/\s+/g,'-').replace(/[^\w-]/g,'').toLowerCase()"
+                                                                autocomplete="off"
+                                                                x-on:click="fairyLightsPentagram.changeMode(key)"
+                                                                x-bind:checked="index === 0"><label
+                                                                class="btn btn-secondary mb-1 me-1 text-capitalize"
+                                                                x-bind:for="key.replace(/\s+/g,'-').replace(/[^\w-]/g,'').toLowerCase()"
+                                                                x-text="key.replace('-',' ')"></label>
+                                                        </span>
+                                                    </template>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- About -->
+                                        <div class="settings__tab-pane about tab-pane fade" id="about-tab-pane"
+                                            role="tabpanel" aria-labelledby="about-tab">
+                                            <h2 class="settings__heading h4 text-center mt-3 mb-3">
+                                                About Fairy&nbsp;Lights Pentagram&nbsp;Calculator</h2>
+                                            <div class="calculator__card card p-3">
+                                                <p>Want a shiny fairy lights pentagram on your wall but not sure how
+                                                    much length you need?</p>
+                                                <p>Here's the Fairy Lights Pentagram Calculator that makes every day
+                                                    brighter!</p>
+                                                <p class="small fst-italic">Follow the manufacturer's safety
+                                                    instructions.
+                                                    Do not overload outlets. Use UL-listed lights.</p>
+                                                <h3>Credits:</h3>
+                                                <p class="mb-0">App by <a href="https://vasiliykvasov.ru"
+                                                        target="_blank">Vasiliy Kvasov</a></p>
+                                                <p>Image by <a href="https://rageinput.tumblr.com/" target="_blank"
+                                                        rel="noopener noreferrer">rageinput</a></p>
+                                                <p class="mb-0">Made with:</p>
+                                                <ul>
+                                                    <li><a href="https://getbootstrap.com/" target="_blank"
+                                                            rel="noopener noreferrer">Bootstrap</a> — responsive UI
+                                                        toolkit
+                                                    </li>
+                                                    <li><a href="https://bootswatch.com/sketchy/" target="_blank"
+                                                            rel="noopener noreferrer">Sketchy</a> — hand-drawn look
+                                                        Bootstrap
+                                                        theme from Bootswatch</li>
+                                                    <li><a href="https://alpinejs.dev/" target="_blank"
+                                                            rel="noopener noreferrer">Alpine.js</a> —
+                                                        lightweight reactivity
+                                                    </li>
+                                                    <li><a href="https://www.svgrepo.com/collection/hand-drawn/"
+                                                            target="_blank" rel="noopener noreferrer">Hand-Drawn
+                                                            Icons</a> — from SVGRepo</a></li>
+                                                </ul>
+                                                <p>Version 0.2.0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Screen Full -->
+            <div class="screens__tab tab-pane fade text-center" id="screen-full-tab" aria-labelledby="screen-full-pill">
+                <div class="row">
+                    <div class="screen col d-flex align-items-start justify-content-center">
+                        <div class="screen__item screensaver">
+                            <button class="screensaver__clicker btn btn-link" type="button" id="full-screen-clicker"
+                                x-on:click="fairyLightsPentagram.changeEffect()" aria-label="Switch effect"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Screen Control -->
+        <div class="screen-control position-fixed top-0 end-0 p-3">
+            <ul class="screen-control nav nav-pills">
+                <li class="screen-control__nav-item nav-item" role="presentation">
+                    <button class="screen-control__nav-link nav-link active" id="screen-settings-pill"
+                        data-bs-toggle="pill" data-bs-target="#screen-settings-tab" type="button" role="tab"
+                        aria-controls="screen-settings-tab" aria-selected="true" aria-label="Open settings">
+                        <span x-html="icons[0]" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li class="screen-control__nav-item nav-item" role="presentation">
+                    <button class="screen-control__nav-link nav-link" id="screen-full-pill" data-bs-toggle="pill"
+                        data-bs-target="#screen-full-tab" type="button" role="tab" aria-controls="screen-full-tab"
+                        aria-selected="false" aria-label="Close settings">
+                        <span x-html="icons[1]" aria-hidden="true"></span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/load.js" type="module" defer></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="./js/resize.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+    <script src="./js/tabindex.js" type="module" defer></script>
+</body>
+
+</html>
