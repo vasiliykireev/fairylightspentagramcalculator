@@ -10,6 +10,7 @@
     <meta name="author" content="Vasiliy Kvasov">
     <link rel="stylesheet" href="./css/sketchy.css">
     <link rel="stylesheet" href="./css/resize.css">
+    <link rel="stylesheet" href="./css/themes.css">
     <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
@@ -35,6 +36,7 @@
         content="https://fairylightspentagramcalculator.com/fairylightspentagramcalculator-og.jpg" />
     <meta property="og:type" content="product" />
     <meta property="og:url" content="https://fairylightspentagramcalculator.com" />
+    <script src="./js/theme-head.js"></script>
 </head>
 
 <body>
@@ -93,35 +95,41 @@
                                                 Fairy Lights Pentagram Calculator</h1>
                                             <form class="calculator__card card p-3"
                                                 x-data="{pentagramDiameter: '', pentagramLength: '', ratio: 7.89687523508}">
-                                                <p class="calculator__caption text-center">Inches, feet, centimeters —
-                                                    whatever…</p>
-                                                <div class="calculator__diameter diameter mb-4">
-                                                    <label class="diameter__form-label form-label"
-                                                        for="pentagram-diameter">Pentagram
-                                                        diameter</label>
-                                                    <div class="diameter__input-group d-flex align-items-center">
-                                                        <input type="number" class="diameter__input form-control me-2"
-                                                            id="pentagram-diameter" step="0.1" placeholder="66.6"
-                                                            aria-label="Pentagram diameter"
-                                                            x-model.number="pentagramDiameter" />
-                                                        <button type="button" class="diameter__apply btn btn-secondary"
-                                                            x-on:click="if (pentagramDiameter > 0) {pentagramLength = Math.round(pentagramDiameter * ratio * 10) / 10}">
-                                                            Calculate
-                                                        </button>
+                                                <div class="card-body">
+                                                    <p class="calculator__caption text-center">
+                                                        Inches, feet, centimeters — whatever…</p>
+                                                    <div class="calculator__diameter diameter mb-4">
+                                                        <label class="diameter__form-label form-label"
+                                                            for="pentagram-diameter">Pentagram
+                                                            diameter</label>
+                                                        <div class="diameter__input-group d-flex align-items-center">
+                                                            <input type="number"
+                                                                class="diameter__input form-control me-2 bg-light"
+                                                                id="pentagram-diameter" step="0.1" placeholder="66.6"
+                                                                aria-label="Pentagram diameter"
+                                                                x-model.number="pentagramDiameter" />
+                                                            <button type="button"
+                                                                class="diameter__apply btn btn-secondary"
+                                                                x-on:click="if (pentagramDiameter > 0) {pentagramLength = Math.round(pentagramDiameter * ratio * 10) / 10}">
+                                                                Calculate
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="calculator__length length mb-4">
-                                                    <label class="length__form-label form-label"
-                                                        for="pentagram-length">Fairy lights length</label>
-                                                    <div class="length__input-group d-flex align-items-center">
-                                                        <input type="number" class="length__input form-control me-2"
-                                                            id="pentagram-length" step="0.1" placeholder="525.9"
-                                                            x-model.number="pentagramLength"
-                                                            aria-label="Fairy lights length" />
-                                                        <button type="button" class="length__apply btn btn-secondary"
-                                                            x-on:click="if (pentagramLength > 0) {pentagramDiameter = Math.round(pentagramLength / ratio * 10) / 10}">
-                                                            Calculate
-                                                        </button>
+                                                    <div class="calculator__length length mb-4">
+                                                        <label class="length__form-label form-label"
+                                                            for="pentagram-length">Fairy lights length</label>
+                                                        <div class="length__input-group d-flex align-items-center">
+                                                            <input type="number"
+                                                                class="length__input form-control me-2 bg-light"
+                                                                id="pentagram-length" step="0.1" placeholder="525.9"
+                                                                x-model.number="pentagramLength"
+                                                                aria-label="Fairy lights length" />
+                                                            <button type="button"
+                                                                class="length__apply btn btn-secondary"
+                                                                x-on:click="if (pentagramLength > 0) {pentagramDiameter = Math.round(pentagramLength / ratio * 10) / 10}">
+                                                                Calculate
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </form>
@@ -137,17 +145,39 @@
                                                     <p class="mb-0">Select a mode:</p>
                                                     <template x-for="(key, index) in Object.keys(fairyLightsModes)"
                                                         :key="key">
-                                                        <span><input type="radio" class="btn-check"
+                                                        <span>
+                                                            <input type="radio" class="btn-check"
                                                                 name="fairy-lights-pentagram-modes"
                                                                 x-bind:id="key.replace(/\s+/g,'-').replace(/[^\w-]/g,'').toLowerCase()"
-                                                                autocomplete="off"
-                                                                x-on:click="fairyLightsPentagram.changeMode(key)"
-                                                                x-bind:checked="index === 0"><label
-                                                                class="btn btn-secondary mb-1 me-1 text-capitalize"
+                                                                x-bind:value="key" autocomplete="off"
+                                                                x-on:change="fairyLightsPentagram.changeMode(key)"
+                                                                x-bind:checked="index === 0">
+
+                                                            <label class="btn btn-secondary mb-1 me-1 text-capitalize"
                                                                 x-bind:for="key.replace(/\s+/g,'-').replace(/[^\w-]/g,'').toLowerCase()"
-                                                                x-text="key.replace('-',' ')"></label>
+                                                                x-text="key.replace(/[-_]/g, ' ')"></label>
                                                         </span>
                                                     </template>
+                                                </div>
+                                                <div class="theme-buttons mb-4" x-data="themeSwitcher()"
+                                                    x-init="init()">
+                                                    <p class="mb-0">Select theme:</p>
+                                                    <input type="radio" class="btn-check" name="theme-options"
+                                                        id="theme-system" autocomplete="off" x-model="theme"
+                                                        value="system" @change="set('system')">
+                                                    <label class="btn btn-secondary" for="theme-system"
+                                                        :class="theme === 'system' ? 'active' : ''">System</label>
+                                                    <input type="radio" class="btn-check" name="theme-options"
+                                                        id="theme-dark" autocomplete="off" x-model="theme" value="dark"
+                                                        @change="set('dark')">
+                                                    <label class="btn btn-secondary" for="theme-dark"
+                                                        :class="theme === 'dark' ? 'active' : ''">Dark</label>
+                                                    <input type="radio" class="btn-check" name="theme-options"
+                                                        id="theme-light" autocomplete="off" x-model="theme"
+                                                        value="light" @change="set('light')">
+                                                    <label class="btn btn-secondary" for="theme-light"
+                                                        :class="theme === 'light' ? 'active' : ''">Light</label>
+                                                    <p class="mt-2">Dark theme designed for projectors.</p>
                                                 </div>
                                             </form>
                                         </div>
@@ -211,7 +241,8 @@
         </div>
         <!-- Screen Control -->
         <div class="screen-control position-fixed top-0 end-0 p-3">
-            <ul class="screen-control nav nav-pills">
+            <ul class="screen-control nav nav-pills flex-column align-items-end" aria-orientation="vertical"
+                role="tablist">
                 <li class="screen-control__nav-item nav-item" role="presentation">
                     <button class="screen-control__nav-link nav-link active" id="screen-settings-pill"
                         data-bs-toggle="pill" data-bs-target="#screen-settings-tab" type="button" role="tab"
@@ -235,7 +266,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
         defer></script>
+    <script src="./js/save-state.js" defer></script>
+
     <script src="./js/tabindex.js" type="module" defer></script>
+    <script src="./js/theme.js"></script>
 </body>
 
 </html>
